@@ -11,5 +11,7 @@ class Customer {
     this.phone = phone;
   }
   
+  //Link Access Method
+
   
 }

@@ -14,5 +14,22 @@ class R_Device {
     this.deviceserial = deviceserial;
   }
   
+  //Get Device ID
+
+
+  //Get Device Type
+
+
+  //Get Device Brand
+
+
+  //Get Device Model
+
+
+  //Get Device Serial Number
+
+
+  //Get All Device Info
+
   
 }

@@ -6,4 +6,25 @@ class Tech_gui {
     this.temp = this.temp;
   }
   
+  //View Repair GUI
+
+
+  //Update Status (Triggered after drag and drop)
+
+
+  //Add Diognosis
+
+
+  //Get Personalized Link
+
+
+  //Upload Photo
+
+
+  //Update Note
+
+
+  //Get the customers view
+
+  
 }

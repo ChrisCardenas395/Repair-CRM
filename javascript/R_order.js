@@ -19,4 +19,28 @@ class R_order {
     this.personallink = this.personallink;
   }
   
+  //Get Repair ID
+
+
+  //Get Device Type
+
+
+  //Get Date Created
+
+
+  //Get Status
+
+
+  //Get Edit Dates
+
+
+  //Get Photos
+
+
+  //Get Repair Status
+
+
+  //Get Personal Link
+
+  
 }
