@@ -5,9 +5,9 @@ class R_photo {
 
 
   constructor(photoId, imageUrl, dateAdded) {
-    this.photoId = this.photoId;
-    this.imageUrl = this.imageUrl;
-    this.dateAdded = this.dateAdded;
+    this.photoId = photoId;
+    this.imageUrl = imageUrl;
+    this.dateAdded = dateAdded;
   }
   
   // GETTERS
@@ -34,6 +34,26 @@ class R_photo {
 
     setDateAdded(dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+
+    //methods
+
+    uploadPhoto(newImageUrl, dateAdded) {
+        if (typeof newImageUrl === "string" && //makes sure it is a string
+            newImageUrl.trim() !== "") { //makes sure nonempty (checks that there is substance after removing whitespace before/after a URL)
+            this.setImageUrl(newImageUrl);
+            this.setDateAdded(dateAdded);
+        }
+    }
+
+    deletePhoto() {
+        this.setImageUrl(null);
+        this.setDateAdded(null);
+    }
+
+    viewPhoto() {
+        return this.getImageUrl();
     }
 
 

@@ -6,10 +6,10 @@ class R_part {
 
 
   constructor(partid, partName, status, quantity) {
-    this.partid = this.partid;
-    this.partName = this.partName; 
-    this.status = this.status;
-    this.quantity = this.quantity;
+    this.partid = partid;
+    this.partName = partName; 
+    this.status = status;
+    this.quantity = quantity;
   }
 
   // GETTERS

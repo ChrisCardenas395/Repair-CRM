@@ -56,6 +56,24 @@ class R_Device {
         this.deviceserial = deviceserial;
     }
 
-  
-  
+
+    getDeviceInfo() { //displays all device info nicely
+        return `
+        Device ID: ${this.getDeviceId()}
+        Device Type: ${this.getDeviceType()}
+        Brand: ${this.getDeviceBrand()}
+        Model: ${this.getDeviceModel()}
+        Serial Number: ${this.getDeviceSerial()}
+        `;
+    }
+
+    updateDeviceInfo(deviceType, deviceBrand, deviceModel, deviceSerial) {
+        this.setDeviceType(deviceType);
+        this.setDeviceBrand(deviceBrand);
+        this.setDeviceModel(deviceModel);
+        this.setDeviceSerial(deviceSerial);
+    }
+
+
+
 }
