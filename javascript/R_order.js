@@ -19,28 +19,71 @@ class R_order {
     this.personallink = this.personallink;
   }
   
-  //Get Repair ID
 
+    // GETTERS
+    getRepairId() {
+        return this.repairid;
+    }
 
-  //Get Device Type
+    getDeviceType() {
+        return this.devicetype;
+    }
 
+    getDateCreated() {
+        return this.datecreated;
+    }
 
-  //Get Date Created
+    getStatus() {
+        return this.status;
+    }
 
+    getEditDates() {
+        return this.editdates;
+    }
 
-  //Get Status
+    getPhotos() {
+        return this.photos;
+    }
 
+    getRepairStatus() {
+        return this.repairstatus;
+    }
 
-  //Get Edit Dates
+    getPersonalLink() {
+        return this.personallink;
+    }
 
+    // SETTERS
+    setRepairId(repairid) {
+        this.repairid = repairid;
+    }
 
-  //Get Photos
+    setDeviceType(devicetype) {
+        this.devicetype = devicetype;
+    }
 
+    setDateCreated(datecreated) {
+        this.datecreated = datecreated;
+    }
 
-  //Get Repair Status
+    setStatus(status) {
+        this.status = status;
+    }
 
+    setEditDates(editdates) {
+        this.editdates = editdates;
+    }
 
-  //Get Personal Link
+    setPhotos(photos) {
+        this.photos = photos;
+    }
 
-  
+    setRepairStatus(repairstatus) {
+        this.repairstatus = repairstatus;
+    }
+
+    setPersonalLink(personallink) {
+        this.personallink = personallink;
+    }
+
 }

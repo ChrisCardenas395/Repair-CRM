@@ -13,23 +13,49 @@ class R_Device {
     this.devicemodel = devicemodel;
     this.deviceserial = deviceserial;
   }
+
+    // GETTERS
+    getDeviceId() {
+        return this.deviceid;
+    }
+
+    getDeviceType() {
+        return this.devicetype;
+    }
+
+    getDeviceBrand() {
+        return this.devicebrand;
+    }
+
+    getDeviceModel() {
+        return this.devicemodel;
+    }
+
+    getDeviceSerial() {
+        return this.deviceserial;
+    }
+
+    // SETTERS
+    setDeviceId(deviceid) {
+        this.deviceid = deviceid;
+    }
+
+    setDeviceType(devicetype) {
+        this.devicetype = devicetype;
+    }
+
+    setDeviceBrand(devicebrand) {
+        this.devicebrand = devicebrand;
+    }
+
+    setDeviceModel(devicemodel) {
+        this.devicemodel = devicemodel;
+    }
+
+    setDeviceSerial(deviceserial) {
+        this.deviceserial = deviceserial;
+    }
+
   
-  //Get Device ID
-
-
-  //Get Device Type
-
-
-  //Get Device Brand
-
-
-  //Get Device Model
-
-
-  //Get Device Serial Number
-
-
-  //Get All Device Info
-
   
 }
