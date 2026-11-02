@@ -1,9 +1,8 @@
 -- Repair Project CRM database setup
 use csc380_f26_ccarden3;
 
+DROP TABLE IF EXISTS part, repair_photo, note, edit_history, repair_order, device, customer, technician;
 -- Create tables for the Repair Project CRM
-
-DROP TABLE IF EXISTS technician;
 
 CREATE TABLE technician (
     technician_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -11,8 +10,6 @@ CREATE TABLE technician (
     email VARCHAR(255) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL
 );
-
-DROP TABLE IF EXISTS customer;
 
 CREATE TABLE customer (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -119,4 +116,3 @@ INSERT INTO part (repair_id, part_name, status, quantity) VALUES (1, 'Speaker', 
 -- ---------- Check ----------
 SHOW TABLES;
 SELECT repair_id, status, customer_comments FROM repair_order;
- 
