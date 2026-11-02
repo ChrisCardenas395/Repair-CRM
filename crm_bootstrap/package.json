@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "css-compile": "sass --load-path=node_modules --style expanded --source-map --embed-sources scss:css",
+    "css-prefix": "postcss --config postcss.config.js --replace \"css/*.css\" \"!css/*.min.css\"",
+    "build": "npm-run-all --sequential css-compile css-prefix",
+    "watch": "nodemon --watch scss/ --ext scss --exec \"npm run build\"",
+    "serve": "sirv --port 8080 --dev .",
+    "start": "npm-run-all build --parallel watch serve",
+    "lint": "stylelint \"scss/**/*.scss\""
+  }
+}
