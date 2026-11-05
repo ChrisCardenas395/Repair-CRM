@@ -44,9 +44,9 @@ CREATE TABLE repair_order (
   customer_id       INT NOT NULL,
   device_id         INT NOT NULL,
   technician_id     INT,
-  status            ENUM('Received','Assessment Complete','Waiting on Parts',
-                         'In Repair','Testing','Ready to Ship','Shipped','Cancelled')
-                    NOT NULL DEFAULT 'Received',
+  status ENUM('Received','Under Review','Waiting for Parts','In Progress',
+            'Done','Shipped','Cancelled') 
+            NOT NULL DEFAULT 'Received',
   diagnosis         TEXT,
   customer_comments TEXT,
   shopify_order_id  VARCHAR(50),                 -- links the repair to the Shopify order
@@ -63,7 +63,7 @@ CREATE TABLE edit_history (
   history_id      INT AUTO_INCREMENT PRIMARY KEY,
   repair_id       INT NOT NULL,
   change_type     ENUM('Status','Note','Diagnosis','Photo','Part','Device') NOT NULL,
-  details         VARCHAR(255),                  -- e.g. 'Received -> Assessment Complete'
+  details         VARCHAR(255),                  -- e.g. 'Received -> Under Review'
   changed_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (repair_id) REFERENCES repair_order(repair_id) ON DELETE CASCADE
 );
