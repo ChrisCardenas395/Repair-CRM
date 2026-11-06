@@ -1,0 +1,5 @@
+# Technician's Workspace
+
+A workspace for viewing customer requests and organizing work.
+
+The home screen includes a customer request area, workspace columns, search, and navigation for requests and policies.

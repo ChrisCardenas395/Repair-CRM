@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Technician's Workspace | Customer Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="View customer requests and organize work in the Technician's Workspace."
+    />
+    <meta name="author" content="Technician's Workspace" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="PerplexityBot" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Technician's Workspace" />
+    <meta
+      property="og:title"
+      content="Technician's Workspace | Customer Requests"
+    />
+    <meta
+      property="og:description"
+      content="View customer requests and organize work in the Technician's Workspace."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Technician's Workspace | Customer Requests"
+    />
+    <meta
+      name="twitter:description"
+      content="View customer requests and organize work in the Technician's Workspace."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Technician's Workspace",
+        "description": "A workspace for viewing customer requests and organizing work.",
+        "applicationCategory": "BusinessApplication"
+      }
+    </script>
+  </head>
+  <body>
+    <main class="workspace" data-model-id="11:57">
+      <aside class="orders-sidebar" aria-label="Orders">
+        <article class="order-card order-card-one">
+          <p>Example New Order</p>
+        </article>
+        <article class="order-card order-card-two">
+          <p>Example New Order</p>
+        </article>
+        <article class="order-card order-card-three">
+          <p>Example New Order</p>
+        </article>
+        <button class="order-card create-order" type="button">
+          Create&nbsp;&nbsp;New Order
+        </button>
+      </aside>
+
+      <header class="site-header">
+        <div class="active-navigation-background" aria-hidden="true"></div>
+
+        <nav class="primary-navigation" aria-label="Primary navigation">
+          <a
+            class="navigation-item navigation-home"
+            href="#workspace-title"
+            aria-label="Home"
+          >
+            <svg class="navigation-icon" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M8 29 32 8l24 21v27H39V39H25v17H8Z"></path>
+            </svg>
+            <span>Home</span>
+          </a>
+
+          <a
+            class="navigation-item navigation-request"
+            href="#received-title"
+            aria-label="Request"
+          >
+            <svg class="navigation-icon" viewBox="0 0 64 64" aria-hidden="true">
+              <path
+                d="M17 20h30l4 36H13Zm8 0v-5a7 7 0 0 1 14 0v5"
+                fill="none"
+              ></path>
+            </svg>
+            <span>Request</span>
+          </a>
+
+          <a
+            class="navigation-item navigation-policies"
+            href="#policies"
+            aria-label="Policies and FAQ"
+          >
+            <svg class="navigation-icon" viewBox="0 0 64 64" aria-hidden="true">
+              <path
+                d="M17 7h23l10 10v40H17Zm23 0v11h10M24 29h19M24 38h19M24 47h13"
+                fill="none"
+              ></path>
+            </svg>
+            <span>Polices + FAQ</span>
+          </a>
+        </nav>
+
+        <form class="search-form" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m16 16 5 5"></path>
+          </svg>
+          <label class="visually-hidden" for="workspace-search"
+            >Search requests</label
+          >
+          <input id="workspace-search" type="search" placeholder="Search" />
+          <button
+            class="search-submit"
+            type="submit"
+            aria-label="Submit search"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 6 6 6-6 6"></path>
+            </svg>
+          </button>
+        </form>
+      </header>
+
+      <h1 id="workspace-title">Technician's Workspace</h1>
+
+      <section class="work-columns" aria-label="Workspace columns">
+        <!-- -------- RECEIVED FROM CUSTOMER -------- -->
+        <article class="work-column">
+          <h2 class="visually-hidden">Received from Customer</h2>
+
+          <button type="button" class="collapsible">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M32 19v26M19 32h26"></path>
+            </svg>
+          </button>
+
+          <div class="content">
+            <h2>Received from Customer</h2>
+
+            <div class="work-divider" aria-hidden="true"></div>
+
+            <article
+              class="customer-request"
+              data-searchable="example date updated notes photo"
+            >
+              <h3>Example</h3>
+              <dl>
+                <div>
+                  <dt>Date Updated:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Notes:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Photo:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+
+              <button
+                class="close-request"
+                type="button"
+                aria-label="Close customer request"
+              >
+                ×
+              </button>
+            </article>
+
+            <p class="empty-state" hidden>No matching requests found.</p>
+          </div>
+        </article>
+        <!-- -------- RECEIVED FROM CUSTOMER -------- -->
+
+        <!-- ---------------- UNDER REVIEW ---------------- -->
+        <article class="work-column">
+          <h2 class="visually-hidden">Under Review</h2>
+
+          <button type="button" class="collapsible">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M32 19v26M19 32h26"></path>
+            </svg>
+          </button>
+
+          <div class="content">
+            <h2>Under Review</h2>
+            <div class="work-divider" aria-hidden="true"></div>
+
+            <article
+              class="customer-request"
+              data-searchable="example date updated notes photo"
+            >
+              <h3>Example</h3>
+              <dl>
+                <div>
+                  <dt>Date Updated:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Notes:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Photo:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+              <button
+                class="close-request"
+                type="button"
+                aria-label="Close customer request"
+              >
+                ×
+              </button>
+            </article>
+          </div>
+        </article>
+        <!-- ---------------- UNDER REVIEW ---------------- -->
+
+        <!-- -------------- WAITING FOR PARTS -------------- -->
+        <article class="work-column">
+          <h2 class="visually-hidden">Waiting for Parts</h2>
+
+          <button type="button" class="collapsible">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M32 19v26M19 32h26"></path>
+            </svg>
+          </button>
+
+          <div class="content">
+            <h2>Waiting for Parts</h2>
+            <div class="work-divider" aria-hidden="true"></div>
+
+            <article
+              class="customer-request"
+              data-searchable="example date updated notes photo"
+            >
+              <h3>Example</h3>
+              <dl>
+                <div>
+                  <dt>Date Updated:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Notes:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Photo:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+              <button
+                class="close-request"
+                type="button"
+                aria-label="Close customer request"
+              >
+                ×
+              </button>
+            </article>
+          </div>
+        </article>
+        <!-- -------------- WAITING FOR PARTS -------------- -->
+
+        <!-- ---------------- IN PROGRESS ---------------- -->
+        <article class="work-column">
+          <h2 class="visually-hidden">In Progress</h2>
+
+          <button type="button" class="collapsible">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M32 19v26M19 32h26"></path>
+            </svg>
+          </button>
+
+          <div class="content">
+            <h2>In Progress</h2>
+            <div class="work-divider" aria-hidden="true"></div>
+
+            <article class="customer-request">
+              <h3>Example</h3>
+              <dl>
+                <div>
+                  <dt>Date Updated:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Notes:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Photo:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+              <button
+                class="close-request"
+                type="button"
+                aria-label="Close customer request"
+              >
+                ×
+              </button>
+            </article>
+          </div>
+        </article>
+        <!-- ---------------- IN PROGRESS ---------------- -->
+
+        <!-- -------------------- DONE -------------------- -->
+        <article class="work-column">
+          <h2 class="visually-hidden">Done</h2>
+
+          <button type="button" class="collapsible">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M32 19v26M19 32h26"></path>
+            </svg>
+          </button>
+
+          <div class="content">
+            <h2>Done</h2>
+            <div class="work-divider" aria-hidden="true"></div>
+
+            <article class="customer-request">
+              <h3>Example</h3>
+              <dl>
+                <div>
+                  <dt>Date Updated:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Notes:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Photo:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+              <button
+                class="close-request"
+                type="button"
+                aria-label="Close customer request"
+              >
+                ×
+              </button>
+            </article>
+          </div>
+        </article>
+        <!-- -------------------- DONE -------------------- -->
+
+        <!-- ------------------- SHIPPED ------------------ -->
+        <article class="work-column">
+          <h2 class="visually-hidden">Shipped</h2>
+
+          <button type="button" class="collapsible">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M32 19v26M19 32h26"></path>
+            </svg>
+          </button>
+
+          <div class="content">
+            <h2>Shipped</h2>
+            <div class="work-divider" aria-hidden="true"></div>
+
+            <article class="customer-request">
+              <h3>Example</h3>
+              <dl>
+                <div>
+                  <dt>Date Updated:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Notes:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Photo:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+              <button
+                class="close-request"
+                type="button"
+                aria-label="Close customer request"
+              >
+                ×
+              </button>
+            </article>
+          </div>
+        </article>
+        <!-- ------------------- SHIPPED ------------------ -->
+      </section>
+
+      <div id="policies" class="visually-hidden" aria-hidden="true"></div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
