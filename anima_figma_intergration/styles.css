@@ -245,38 +245,6 @@ button {
   stroke-linejoin: round;
 }
 
-#workspace-title {
-  position: absolute;
-  top: 166px;
-  left: 540px;
-  margin: 0;
-  font-family: "Gowun Batang", Georgia, serif;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 58px;
-  white-space: nowrap;
-}
-
-.work-column .content h2 {
-  position: relative;
-  padding: 0 18px;
-  padding-top: 0;
-  margin: 0px 0 5px;
-  margin-top: 0px;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 40px;
-  white-space: nowrap;
-}
-
-.work-column .review-divider {
-  position: relative;
-  width: 100%;
-  height: 2px;
-  background: #252525;
-  margin-bottom: 12px;
-}
-
 .customer-request {
   position: relative;
   top: 30px;
@@ -335,6 +303,18 @@ button {
 }
 
 /* -------------------------WORK COLUMN--------------------------- */
+#workspace-title {
+  position: absolute;
+  top: 166px;
+  left: 540px;
+  margin: 0;
+  font-family: "Gowun Batang", Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 58px;
+  white-space: nowrap;
+}
+
 .work-columns {
   position: absolute;
   top: 262px;
