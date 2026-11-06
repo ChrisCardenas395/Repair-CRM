@@ -257,40 +257,30 @@ button {
   white-space: nowrap;
 }
 
-.received-panel {
-  position: absolute;
-  top: 258px;
-  left: 304px;
-  width: 451px;
-  height: 534px;
-  background: #ecf5fb;
-  box-shadow: 0 5px 5px #00000040;
+.work-column .content h2 {
+  position: relative;
+  padding: 0 18px;
+  padding-top: 0;
+  margin: 0px 0 5px;
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  white-space: nowrap;
 }
 
-.received-panel > h2 {
-  position: absolute;
-  top: 21px;
-  left: 14px;
-  width: 425px;
-  margin: 0;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 45px;
-}
-
-.received-divider {
-  position: absolute;
-  top: 68px;
-  left: 21px;
-  width: 400px;
+.work-column .review-divider {
+  position: relative;
+  width: 100%;
   height: 2px;
   background: #252525;
+  margin-bottom: 12px;
 }
 
 .customer-request {
-  position: absolute;
-  top: 103px;
-  left: 14px;
+  position: relative;
+  top: 30px;
+  left: 0px;
   width: 417px;
   height: 252px;
   padding: 23px 11px;
@@ -344,22 +334,65 @@ button {
   text-align: center;
 }
 
+/* -------------------------WORK COLUMN--------------------------- */
 .work-columns {
   position: absolute;
   top: 262px;
-  left: 784px;
+  left: 304px;
   display: flex;
   height: 534px;
+  width: calc(100% - 324px);
   align-items: stretch;
   gap: 18px;
 }
 
 .work-column {
   position: relative;
-  width: 76px;
+  flex: 0 0 76px;
+  min-width: 76px;
   height: 534px;
   background: #edf6fc;
+  overflow: hidden;
   box-shadow: 0 5px 5px #00000040;
+}
+
+.work-column.expanded {
+  flex: 0 0 451px;
+}
+
+.work-column.collapsed {
+  flex: 0 0 76px;
+}
+
+.work-column .content {
+  display: none;
+  padding: 0 18px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #ecf5fb;
+}
+
+.work-column.expanded .content {
+  display: block;
+}
+
+.work-column .content h2 {
+  position: relative;
+  margin: 0 0 5px;
+  padding: 0 18px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.work-divider {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #252525;
+  margin-bottom: 12px;
 }
 
 .work-column:nth-child(2),
@@ -427,3 +460,30 @@ button {
     margin: 0;
   }
 }
+/* -------------------------WORK COLUMN--------------------------- */
+
+/* --------------------------COLLAPSE----------------------------- */
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  width: 76px;
+  min-width: 76px;
+  height: 70px;
+  background-color: #ecf5fb;
+  fill: #5b80dd;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #ecf5fb;
+  width: 100%;
+
+  .work-column.expanded .content {
+  display: block;
+}
+/* --------------------------COLLAPSE----------------------------- */

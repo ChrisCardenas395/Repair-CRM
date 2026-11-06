@@ -64,3 +64,25 @@ workColumnButtons.forEach((button, index) => {
     });
   });
 });
+
+// --------------------------COLLAPSE----------------------------- */
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    var column = this.closest(".work-column");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      column.classList.remove("expanded");
+      column.classList.add("collapsed");
+    } else {
+      content.style.display = "block";
+      column.classList.remove("collapsed");
+      column.classList.add("expanded");
+    }
+  });
+}
+// --------------------------COLLAPSE----------------------------- */
