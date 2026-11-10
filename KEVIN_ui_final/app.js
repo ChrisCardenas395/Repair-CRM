@@ -86,3 +86,29 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 // --------------------------COLLAPSE----------------------------- */
+
+// ----------------------------PHOTO----------------------------- */
+
+const input = document.getElementById('photo-input');
+const preview = document.getElementById('photo-preview');
+
+input.addEventListener('change', function() {
+  preview.innerHTML = '';
+
+  const files = this.files;
+
+  Array.from(files).forEach(file => {
+    if (file.type.startsWith('image/')) {
+      const img = document.createElement('img');
+
+      img.src = URL.createObjectURL(file);
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+
+      preview.appendChild(img);
+    }
+  });
+});
+  // ----------------------------PHOTO----------------------------- */
+  document.getElementById("date-picker").valueAsDate = new Date();

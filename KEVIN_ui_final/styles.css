@@ -49,6 +49,7 @@ button {
   background: #fff;
 }
 
+/* -------------------- CHANGED ------------------ */
 .orders-sidebar {
   position: fixed;
   top: 146px;
@@ -59,6 +60,7 @@ button {
   background: #767676;
   z-index: 10;
 }
+/* -------------------- CHANGED ------------------ */
 
 .order-card {
   position: absolute;
@@ -103,6 +105,7 @@ button {
   font-family: Inter, Arial, sans-serif;
 }
 
+/* -------------------- CHANGED ------------------ */
 .site-header {
   position: fixed;
   top: 0;
@@ -121,6 +124,7 @@ button {
   height: 100%;
   background: #48484c;
 }
+/* -------------------- CHANGED ------------------ */
 
 .primary-navigation {
   position: absolute;
@@ -249,10 +253,9 @@ button {
 .customer-request {
   position: relative;
   top: 30px;
-  left: 0px;
   width: 417px;
-  height: 252px;
-  padding: 23px 11px;
+  height: 100%;
+  padding: 23px 11px 40px;
   background: #5b7fdc;
   color: #fff;
 }
@@ -316,6 +319,25 @@ button {
   white-space: nowrap;
 }
 
+#date-picker {
+    padding: 1px 12px;
+    margin-left: 8px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+}
+
+#photo-input::file-selector-button {
+    padding: 8px 12px;
+    margin-left: 3px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+}
+
+/* ------------ CHANGED ------------ */
 .work-columns {
   position: absolute;
   top: 262px;
@@ -343,6 +365,7 @@ button {
   overflow: visible;
   z-index: 1;
 }
+/* ------------ CHANGED ------------ */
 
 .work-column.expanded {
   flex: 0 0 451px;
@@ -354,7 +377,7 @@ button {
 
 .work-column .content {
   display: none;
-  padding: 0 18px;
+  padding: 0 18px 50px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -448,6 +471,19 @@ button {
     margin: 0;
   }
 }
+
+/* ------------ CHANGED ------------ */
+.note-box {
+  padding: 10px;
+  min-height: 20px;
+  border: 1px solid #ffffff;
+}
+
+.note-box:focus {
+  outline: none;
+}
+/* ------------ CHANGED ------------ */
+
 /* -------------------------WORK COLUMN--------------------------- */
 
 /* --------------------------COLLAPSE----------------------------- */
@@ -470,6 +506,7 @@ button {
   overflow: hidden;
   background-color: #ecf5fb;
   width: 100%;
+}
 
   .work-column.expanded .content {
   display: block;
