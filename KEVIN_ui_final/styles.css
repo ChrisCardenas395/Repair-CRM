@@ -40,13 +40,14 @@ button {
 }
 
 .workspace {
-  position: relative;
+  position: fixed;
   width: 1280px;
   min-width: 1280px;
   min-height: 832px;
   margin: 0 auto;
   overflow: hidden;
   background: #fff;
+
 }
 
 /* -------------------- CHANGED ------------------ */
