@@ -87,7 +87,35 @@ for (i = 0; i < coll.length; i++) {
 }
 // --------------------------COLLAPSE----------------------------- */
 
-// Create Order & Orde Details Pop up Menu
+// ----------------------------PHOTO----------------------------- */
+
+const input = document.getElementById('photo-input');
+const preview = document.getElementById('photo-preview');
+
+input.addEventListener('change', function() {
+  preview.innerHTML = '';
+
+  const files = this.files;
+
+  Array.from(files).forEach(file => {
+    if (file.type.startsWith('image/')) {
+      const img = document.createElement('img');
+
+      img.src = URL.createObjectURL(file);
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+
+      preview.appendChild(img);
+    }
+  });
+});
+  // ----------------------------PHOTO----------------------------- */
+
+  // --------------------------POP UP MENU------------------------- */
+  document.getElementById("date-picker").valueAsDate = new Date();
+
+  // Create Order & Orde Details Pop up Menu
 function openForm() {
     document.getElementById("popupOverlay").style.display = "flex";
   }
@@ -173,3 +201,4 @@ const orderData = {
   closeForm();
 })
 // Create Order & Order Details Pop up Menu End
+// --------------------------POP UP MENU------------------------- */
