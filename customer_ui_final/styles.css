@@ -1,0 +1,540 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Inter&family=Kantumruy+Pro&family=Roboto&display=swap");
+
+:root {
+  color: #000;
+  background: #fff;
+  font-family: "Kantumruy Pro", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 1280px;
+  min-height: 832px;
+  background: #fff;
+}
+
+body {
+  min-width: 1280px;
+  min-height: 832px;
+  margin: 0;
+  background: #fff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.workspace {
+  position: fixed;
+  width: 1280px;
+  min-width: 1280px;
+  min-height: 832px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+
+}
+
+.orders-sidebar {
+  position: fixed;
+  top: 146px;
+  left: 0;
+  width: 250px;
+  min-height: 100vh;
+  border-right: 2px solid #4f4f4f;
+  background: #767676;
+  z-index: 10;
+}
+
+.order-card {
+  position: absolute;
+  left: 48px;
+  display: flex;
+  width: 163px;
+  height: 129px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+  padding: 0 19px;
+  border-radius: 0;
+  background: #5b80dd;
+  box-shadow: 0 5px 10px #00000040;
+  color: #fff;
+  font-family: "Kantumruy Pro", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1000vh;
+  height: 147px;
+  border-bottom: 4px solid #545454;
+  background: #767676;
+}
+
+.active-navigation-background {
+  position: absolute;
+  top: 1px;
+  left: 42px;
+  width: 165px;
+  height: 100%;
+  background: #48484c;
+}
+
+.primary-navigation {
+  position: absolute;
+  inset: 0;
+}
+
+.navigation-item {
+  position: absolute;
+  top: 17px;
+  display: flex;
+  width: 142px;
+  height: 126px;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navigation-home {
+  left: 50px;
+}
+
+.navigation-request {
+  left: 250px;
+}
+
+.navigation-policies {
+  left: 450px;
+}
+
+.navigation-icon {
+  width: 80px;
+  height: 80px;
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.navigation-item span {
+  margin-top: 9px;
+}
+
+.navigation-policies span {
+  width: 142px;
+}
+
+.navigation-item:focus-visible,
+.search-submit:focus-visible,
+.close-request:focus-visible,
+.add-work-item:focus-visible,
+.create-order:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
+
+.search-form {
+  position: absolute;
+  top: 46px;
+  left: 922px;
+  display: flex;
+  width: 340px;
+  height: 53px;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+}
+
+.search-icon {
+  width: 21px;
+  height: 21px;
+  margin-left: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: #49454f;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.search-form input {
+  min-width: 0;
+  height: 100%;
+  flex: 1;
+  padding: 0 8px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #49454f;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.search-form input::placeholder {
+  color: #49454f;
+  opacity: 1;
+}
+
+.search-submit {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.search-submit svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: #49454f;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.customer-request {
+  position: relative;
+  top: 30px;
+  width: 417px;
+  height: 100%;
+  padding: 23px 11px 40px;
+  background: #5b7fdc;
+  color: #fff;
+}
+
+.customer-request h3 {
+  margin: 0 0 31px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.customer-request dl,
+.customer-request dl div {
+  margin: 0;
+}
+
+.customer-request dt {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.customer-request dd {
+  margin: 0;
+}
+
+.close-request {
+  position: absolute;
+  top: -2px;
+  right: 4px;
+  padding: 0 4px;
+  background: transparent;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.empty-state {
+  position: absolute;
+  top: 130px;
+  left: 14px;
+  width: 417px;
+  margin: 0;
+  color: #48484c;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ------------------DOMINO TRACKER-------------- */
+
+.orders-strip {
+  position: absolute;
+  top: 171px;
+  left: 294px;
+  width: 560px;                                      /* <----- EDIT HERE */
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.orders-capsule {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #f2f7fc;
+}
+
+.capsule-divider {
+  position: absolute;
+  top: -8px;
+  width: 1px;
+  height: 80px;
+  background: #5b80dd;
+  transform: skewX(-25deg);
+  transform-origin: center;
+}
+
+.capsule-divider-one {
+  left: 18%;
+}
+
+.capsule-divider-two {
+  left: 36%;
+}
+
+.capsule-divider-three {
+  left: 54%;
+}
+
+.capsule-divider-four {
+  left: 72%;
+}
+
+.capsule-divider-five {
+  left: 90%;
+}
+
+/* ------------------DOMINO TRACKER-------------- */
+
+/* -------------------------WORK COLUMN--------------------------- */
+#workspace-title {
+  position: absolute;
+  top: 166px;
+  left: 540px;
+  margin: 0;
+  font-family: "Gowun Batang", Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 58px;
+  white-space: nowrap;
+}
+
+#date-picker {
+    padding: 1px 12px;
+    margin-left: 8px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+}
+
+#photo-input::file-selector-button {
+    padding: 8px 12px;
+    margin-left: 3px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+}
+
+.work-columns {
+  position: absolute;
+  top: 262px;
+  left: 304px;
+  display: flex;
+  height: 534px;
+  width: calc(100% - 324px);
+  align-items: stretch;
+  gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 1;
+}
+
+.work-column {
+  position: relative;
+  flex: 0 0 76px;
+  min-width: 76px;
+  min-height: 534px;
+  background: #edf6fc;
+  box-shadow: 0 5px 5px #00000040;
+
+  overflow: visible;
+  z-index: 1;
+}
+
+.work-column.expanded {
+  flex: 0 0 451px;
+}
+
+.work-column.collapsed {
+  flex: 0 0 76px;
+}
+
+.work-column .content {
+  display: none;
+  padding: 0 18px 50px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #ecf5fb;
+}
+
+.work-column.expanded .content {
+  display: block;
+}
+
+.work-column .content h2 {
+  position: relative;
+  margin: 0 0 5px;
+  padding: 0 18px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.work-divider {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #252525;
+  margin-bottom: 12px;
+}
+
+.work-column:nth-child(2),
+.work-column:nth-child(4) {
+  width: 75px;
+}
+
+.work-column:nth-child(3) {
+  width: 77px;
+}
+
+.add-work-item {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 60px;
+  height: 57px;
+  padding: 0;
+  background: transparent;
+}
+
+.work-column:nth-child(n + 4) .add-work-item {
+  left: 7px;
+}
+
+.add-work-item svg {
+  width: 60px;
+  height: 57px;
+  fill: #5b80dd;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.work-item {
+  width: calc(100% - 12px);
+  min-height: 70px;
+  margin: 70px 6px 0;
+  padding: 8px 4px;
+  background: #5b80dd;
+  box-shadow: 0 3px 5px #00000030;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 1279px) {
+  .workspace {
+    margin: 0;
+  }
+}
+
+.note-box {
+  padding: 10px;
+  min-height: 20px;
+  border: 1px solid #ffffff;
+}
+
+.note-box:focus {
+  outline: none;
+}
+
+/* -------------------------WORK COLUMN--------------------------- */
+
+/* --------------------------COLLAPSE----------------------------- */
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  width: 76px;
+  min-width: 76px;
+  height: 70px;
+  background-color: #ecf5fb;
+  fill: #5b80dd;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #ecf5fb;
+  width: 100%;
+}
+
+  .work-column.expanded .content {
+  display: block;
+}
+/* --------------------------COLLAPSE----------------------------- */
