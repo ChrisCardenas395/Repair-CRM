@@ -46,95 +46,108 @@
   <body>
     <main class="workspace" data-model-id="11:57">
       <aside class="orders-sidebar" aria-label="Orders">
-        <button class="order-card create-order" type="button" onclick="openForm()">
+        <button
+          class="order-card create-order"
+          type="button"
+          onclick="openForm()"
+        >
           Create&nbsp;&nbsp;New Order
         </button>
       </aside>
-
-<!-- Repair Order Form Pop Up Overlay -->
-<div id="popupOverlay" class="overlay">
-  <div class="popup-box">
-    <h2>Repair Order Form</h2>
-    <form id="repairOrderForm">
-      <div class="sections-row">
-        <fieldset class="form_section">
-          <legend><h3>Customer</h3></legend>
-          <label for="first_name">First Name</label>
-          <input type="first_name" id="first_name" required>
-        
-          <label for="last_name">Last Name</label>
-          <input type="last_name" id="last_name" required>
-
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-          
-          <label for="phone">Phone (Include Area code)</label>
-          <input type="phone" id="phone" required>
-        </fieldset>
-
-        <fieldset class="form_section">
-            <legend><h3>Device</h3></legend>
-            <label for="deviceType">Device Type</label>
-            <input type="text" id="deviceType" required>
-          
-            <label for="brand">Brand</label>
-            <input type="text" id="brand" required>
-
-            <label for="deviceID">Device ID</label>
-            <input type="text" id="deviceID" required>
-            
-            <label for="model">Device Model</label>
-            <input type="text" id="model" required>
-
-            <label for="serialNumber">Serial Number</label>
-            <input type="text" id="serialNumber" required>
-            
-            <label for="complaint">Customer Complaint</label>
-            <input type="text" id="complaint" required>
-        </fieldset>
-      </div>
       
-      <div class="form_actions">
-        <button type="submit">Create</button>
-        <button type="button" onclick="closeForm()">Cancel</button>
+      <!-- Repair Order Form Pop Up Overlay -->
+      <div id="popupOverlay" class="overlay">
+        <div class="popup-box">
+          <h2>Repair Order Form</h2>
+          <form id="repairOrderForm">
+            <div class="sections-row">
+              <fieldset class="form_section">
+                <legend><h3>Customer</h3></legend>
+                <label for="first_name">First Name</label>
+                <input type="first_name" id="first_name" required />
+
+                <label for="last_name">Last Name</label>
+                <input type="last_name" id="last_name" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+
+                <label for="phone">Phone (Include Area code)</label>
+                <input type="phone" id="phone" required />
+              </fieldset>
+
+              <fieldset class="form_section">
+                <legend><h3>Device</h3></legend>
+                <label for="deviceType">Device Type</label>
+                <input type="text" id="deviceType" required />
+
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" required />
+
+                <label for="deviceID">Device ID</label>
+                <input type="text" id="deviceID" required />
+
+                <label for="model">Device Model</label>
+                <input type="text" id="model" required />
+
+                <label for="serialNumber">Serial Number</label>
+                <input type="text" id="serialNumber" required />
+
+                <label for="complaint">Customer Complaint</label>
+                <input type="text" id="complaint" required />
+              </fieldset>
+            </div>
+
+            <div class="form_actions">
+              <button type="submit">Create</button>
+              <button type="button" onclick="closeForm()">Cancel</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
-  </div>
-</div>
-<!-- Repair Order Form Pop Up Overlay -->
+      <!-- Repair Order Form Pop Up Overlay -->
 
-<!-- Repair Order Card Detail Display -->
-<div id="detailsOverlay" class="overlay">
-  <div class="popup-box">
-    <h2 id="detailHeader">Order Details</h2>
-    <h3 id="detailSubHeader">Order Number</h3>
-    <h3 id="detailPLink">Personalized Link</h3>
-    
-    <div class="sections-row">
-      <fieldset class="form_section">
-        <legend><h3>Customer</h3></legend>
-        <p><strong>Name:</strong> <span id="detailName"></span></p>
-        <p><strong>Email:</strong> <span id="detailEmail"></span></p>
-        <p><strong>Phone:</strong> <span id="detailPhone"></span></p>
-      </fieldset>
+      <!-- Repair Order Card Detail Display -->
+      <div id="detailsOverlay" class="overlay">
+        <div class="popup-box">
+          <h2 id="detailHeader">Order Details</h2>
+          <h3 id="detailSubHeader">Order Number</h3>
+          <h3 id="detailPLink">Personalized Link</h3>
 
-      <fieldset class="form_section">
-        <legend><h3>Device</h3></legend>
-        <p><strong>Device Type:</strong> <span id="detailDeviceType"></span></p>
-        <p><strong>Brand:</strong> <span id="detailBrand"></span></p>
-        <p><strong>Model:</strong> <span id="detailModel"></span></p>
-        <p><strong>Device ID:</strong> <span id="detailDeviceID"></span></p>
-        <p><strong>Serial Number:</strong> <span id="detailSerial"></span></p>
-        <p><strong>Complaint:</strong> <span id="detailComplaint"></span></p>
-      </fieldset>
-    </div>
+          <div class="sections-row">
+            <fieldset class="form_section">
+              <legend><h3>Customer</h3></legend>
+              <p><strong>Name:</strong> <span id="detailName"></span></p>
+              <p><strong>Email:</strong> <span id="detailEmail"></span></p>
+              <p><strong>Phone:</strong> <span id="detailPhone"></span></p>
+            </fieldset>
 
-    <div class="form_actions">
-      <button type="button" onclick="closeDetails()">Close</button>
-    </div>
-  </div>
-</div>
-<!-- Repair Order Card Detail Display -->
+            <fieldset class="form_section">
+              <legend><h3>Device</h3></legend>
+              <p>
+                <strong>Device Type:</strong>
+                <span id="detailDeviceType"></span>
+              </p>
+              <p><strong>Brand:</strong> <span id="detailBrand"></span></p>
+              <p><strong>Model:</strong> <span id="detailModel"></span></p>
+              <p>
+                <strong>Device ID:</strong> <span id="detailDeviceID"></span>
+              </p>
+              <p>
+                <strong>Serial Number:</strong> <span id="detailSerial"></span>
+              </p>
+              <p>
+                <strong>Complaint:</strong> <span id="detailComplaint"></span>
+              </p>
+            </fieldset>
+          </div>
+
+          <div class="form_actions">
+            <button type="button" onclick="closeDetails()">Close</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repair Order Card Detail Display -->
 
       <header class="site-header">
         <div class="active-navigation-background" aria-hidden="true"></div>
@@ -224,22 +237,32 @@
               class="customer-request"
               data-searchable="example date updated notes photo"
             >
-              <h3>Example</h3>
+              <!-- <h3>Example</h3> -->
               <dl>
                 <div>
-                  <dt>Date Updated:</dt>
-                  <dd></dd>
+                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
                 </div>
+                <br /><br />
                 <div>
                   <dt>Notes:</dt>
-                  <dd></dd>
+                  <div class="note-box" contenteditable="true"></div>
                 </div>
                 <div>
+                  <br /><br />
                   <dt>Photo:</dt>
-                  <dd></dd>
+                  <input
+                    type="file"
+                    id="photo-input"
+                    accept="image/*"
+                    multiple
+                  />
+                  <br /><br />
+                  <div
+                    id="photo-preview"
+                    style="display: flex; flex-wrap: wrap; gap: 10px"
+                  ></div>
                 </div>
               </dl>
-
               <button
                 class="close-request"
                 type="button"
@@ -273,19 +296,30 @@
               class="customer-request"
               data-searchable="example date updated notes photo"
             >
-              <h3>Example</h3>
+              <!-- <h3>Example</h3> -->
               <dl>
                 <div>
-                  <dt>Date Updated:</dt>
-                  <dd></dd>
+                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
                 </div>
+                <br /><br />
                 <div>
                   <dt>Notes:</dt>
-                  <dd></dd>
+                  <div class="note-box" contenteditable="true"></div>
                 </div>
                 <div>
+                  <br /><br />
                   <dt>Photo:</dt>
-                  <dd></dd>
+                  <input
+                    type="file"
+                    id="photo-input"
+                    accept="image/*"
+                    multiple
+                  />
+                  <br /><br />
+                  <div
+                    id="photo-preview"
+                    style="display: flex; flex-wrap: wrap; gap: 10px"
+                  ></div>
                 </div>
               </dl>
               <button
@@ -319,19 +353,30 @@
               class="customer-request"
               data-searchable="example date updated notes photo"
             >
-              <h3>Example</h3>
+              <!-- <h3>Example</h3> -->
               <dl>
                 <div>
-                  <dt>Date Updated:</dt>
-                  <dd></dd>
+                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
                 </div>
+                <br /><br />
                 <div>
                   <dt>Notes:</dt>
-                  <dd></dd>
+                  <div class="note-box" contenteditable="true"></div>
                 </div>
                 <div>
+                  <br /><br />
                   <dt>Photo:</dt>
-                  <dd></dd>
+                  <input
+                    type="file"
+                    id="photo-input"
+                    accept="image/*"
+                    multiple
+                  />
+                  <br /><br />
+                  <div
+                    id="photo-preview"
+                    style="display: flex; flex-wrap: wrap; gap: 10px"
+                  ></div>
                 </div>
               </dl>
               <button
@@ -362,19 +407,30 @@
             <div class="work-divider" aria-hidden="true"></div>
 
             <article class="customer-request">
-              <h3>Example</h3>
+              <!-- <h3>Example</h3> -->
               <dl>
                 <div>
-                  <dt>Date Updated:</dt>
-                  <dd></dd>
+                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
                 </div>
+                <br /><br />
                 <div>
                   <dt>Notes:</dt>
-                  <dd></dd>
+                  <div class="note-box" contenteditable="true"></div>
                 </div>
                 <div>
+                  <br /><br />
                   <dt>Photo:</dt>
-                  <dd></dd>
+                  <input
+                    type="file"
+                    id="photo-input"
+                    accept="image/*"
+                    multiple
+                  />
+                  <br /><br />
+                  <div
+                    id="photo-preview"
+                    style="display: flex; flex-wrap: wrap; gap: 10px"
+                  ></div>
                 </div>
               </dl>
               <button
@@ -405,19 +461,30 @@
             <div class="work-divider" aria-hidden="true"></div>
 
             <article class="customer-request">
-              <h3>Example</h3>
+              <!-- <h3>Example</h3> -->
               <dl>
                 <div>
-                  <dt>Date Updated:</dt>
-                  <dd></dd>
+                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
                 </div>
+                <br /><br />
                 <div>
                   <dt>Notes:</dt>
-                  <dd></dd>
+                  <div class="note-box" contenteditable="true"></div>
                 </div>
                 <div>
+                  <br /><br />
                   <dt>Photo:</dt>
-                  <dd></dd>
+                  <input
+                    type="file"
+                    id="photo-input"
+                    accept="image/*"
+                    multiple
+                  />
+                  <br /><br />
+                  <div
+                    id="photo-preview"
+                    style="display: flex; flex-wrap: wrap; gap: 10px"
+                  ></div>
                 </div>
               </dl>
               <button
@@ -448,19 +515,30 @@
             <div class="work-divider" aria-hidden="true"></div>
 
             <article class="customer-request">
-              <h3>Example</h3>
+              <!-- <h3>Example</h3> -->
               <dl>
                 <div>
-                  <dt>Date Updated:</dt>
-                  <dd></dd>
+                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
                 </div>
+                <br /><br />
                 <div>
                   <dt>Notes:</dt>
-                  <dd></dd>
+                  <div class="note-box" contenteditable="true"></div>
                 </div>
                 <div>
+                  <br /><br />
                   <dt>Photo:</dt>
-                  <dd></dd>
+                  <input
+                    type="file"
+                    id="photo-input"
+                    accept="image/*"
+                    multiple
+                  />
+                  <br /><br />
+                  <div
+                    id="photo-preview"
+                    style="display: flex; flex-wrap: wrap; gap: 10px"
+                  ></div>
                 </div>
               </dl>
               <button
