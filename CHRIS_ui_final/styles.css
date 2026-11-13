@@ -40,23 +40,25 @@ button {
 }
 
 .workspace {
-  position: relative;
+  position: fixed;
   width: 1280px;
   min-width: 1280px;
   min-height: 832px;
   margin: 0 auto;
   overflow: hidden;
   background: #fff;
+
 }
 
 .orders-sidebar {
-  position: absolute;
+  position: fixed;
   top: 146px;
   left: 0;
   width: 250px;
-  height: 686px;
+  min-height: 100vh;
   border-right: 2px solid #4f4f4f;
   background: #767676;
+  z-index: 10;
 }
 
 .order-card {
@@ -80,14 +82,18 @@ button {
   text-align: center;
 }
 
-.order-card p {
-  margin: 0;
-}
-
 .create-order {
   top: 528px;
   background: #00c8b3;
   font-family: Inter, Arial, sans-serif;
+}
+
+.popup-box input,
+.popup-box textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 /* Pop up order creation form (Hidden by Default) */
@@ -135,27 +141,18 @@ button {
   font-size: 1rem;
 }
 
-.popup-box input,
-.popup-box textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
 .form-actions {
   display: flex;
   justify-content: flex-end; /* Aligns buttons neatly to the bottom right */
   gap: 10px;
 }
-
 /* Pop up order creation form (Hidden by Default) */
 
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 1280px;
+  width: 1000vh;
   height: 147px;
   border-bottom: 4px solid #545454;
   background: #767676;
@@ -166,7 +163,7 @@ button {
   top: 1px;
   left: 42px;
   width: 165px;
-  height: 145px;
+  height: 100%;
   background: #48484c;
 }
 
@@ -297,10 +294,9 @@ button {
 .customer-request {
   position: relative;
   top: 30px;
-  left: 0px;
   width: 417px;
-  height: 252px;
-  padding: 23px 11px;
+  height: 100%;
+  padding: 23px 11px 40px;
   background: #5b7fdc;
   color: #fff;
 }
@@ -364,6 +360,24 @@ button {
   white-space: nowrap;
 }
 
+#date-picker {
+    padding: 1px 12px;
+    margin-left: 8px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+}
+
+#photo-input::file-selector-button {
+    padding: 8px 12px;
+    margin-left: 3px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fff;
+}
+
 .work-columns {
   position: absolute;
   top: 262px;
@@ -373,16 +387,23 @@ button {
   width: calc(100% - 324px);
   align-items: stretch;
   gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 1;
 }
 
 .work-column {
   position: relative;
   flex: 0 0 76px;
   min-width: 76px;
-  height: 534px;
+  min-height: 534px;
   background: #edf6fc;
-  overflow: hidden;
   box-shadow: 0 5px 5px #00000040;
+
+  overflow: visible;
+  z-index: 1;
 }
 
 .work-column.expanded {
@@ -395,7 +416,7 @@ button {
 
 .work-column .content {
   display: none;
-  padding: 0 18px;
+  padding: 0 18px 50px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -489,6 +510,17 @@ button {
     margin: 0;
   }
 }
+
+.note-box {
+  padding: 10px;
+  min-height: 20px;
+  border: 1px solid #ffffff;
+}
+
+.note-box:focus {
+  outline: none;
+}
+
 /* -------------------------WORK COLUMN--------------------------- */
 
 /* --------------------------COLLAPSE----------------------------- */
@@ -511,6 +543,7 @@ button {
   overflow: hidden;
   background-color: #ecf5fb;
   width: 100%;
+}
 
   .work-column.expanded .content {
   display: block;
