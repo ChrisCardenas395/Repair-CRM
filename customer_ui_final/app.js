@@ -202,3 +202,47 @@ const orderData = {
 })
 // Create Order & Order Details Pop up Menu End
 // --------------------------POP UP MENU------------------------- */
+
+// -------------------------- ORDER TRACKER ------------------------- */
+const workColumns = document.querySelector(".work-columns");
+const ordersStrip = document.querySelector(".orders-strip");
+
+const dividers = [
+  document.querySelector(".capsule-divider-one"),
+  document.querySelector(".capsule-divider-two"),
+  document.querySelector(".capsule-divider-three"),
+  document.querySelector(".capsule-divider-four"),
+  document.querySelector(".capsule-divider-five")
+];
+
+function updateOrdersLayout() {
+  const columns = [...workColumns.querySelectorAll(".work-column")];
+
+  let currentWidth = 20;
+
+  columns.forEach((column, index) => {
+    currentWidth += column.getBoundingClientRect().width;
+
+    if (index < dividers.length) {
+      dividers[index].style.left = `${currentWidth}px`;
+    }
+
+    currentWidth += 18; // Column gap
+  });
+
+  const totalWidth = columns.reduce(
+    (sum, column) => sum + column.getBoundingClientRect().width,
+    0
+  );
+
+  ordersStrip.style.width = `${totalWidth + (columns.length - 1) * 18}px`;
+}
+
+const observer = new ResizeObserver(updateOrdersLayout);
+
+workColumns.querySelectorAll(".work-column").forEach(column => {
+  observer.observe(column);
+});
+
+updateOrdersLayout();
+// -------------------------- ORDER TRACKER ------------------------- */

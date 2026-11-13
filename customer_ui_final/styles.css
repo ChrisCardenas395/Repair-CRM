@@ -352,8 +352,8 @@ button {
 .orders-strip {
   position: absolute;
   top: 171px;
-  left: 294px;
-  width: 560px;                                     
+  left: 304px;
+  width: var(--orders-width, 560px);
   height: 65px;
   display: flex;
   align-items: center;
@@ -380,24 +380,12 @@ button {
   transform-origin: center;
 }
 
-.capsule-divider-one {
-  left: 18%;
-}
-
-.capsule-divider-two {
-  left: 36%;
-}
-
-.capsule-divider-three {
-  left: 54%;
-}
-
-.capsule-divider-four {
-  left: 72%;
-}
-
+.capsule-divider-one,
+.capsule-divider-two,
+.capsule-divider-three,
+.capsule-divider-four,
 .capsule-divider-five {
-  left: 90%;
+  left: var(--divider-position, 0px);
 }
 
 /* ------------------DOMINO TRACKER-------------- */
