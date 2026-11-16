@@ -94,6 +94,48 @@ app.post('/repairs', async (req, res) => {
   }
 });
 
+app.get('/repairs/:id', async (req, res) => {
+  const repairId = req.params.id;
+
+  try {
+    const [repairs] = await db.query(
+      `SELECT r.repair_id, r.status, r.diagnosis, r.customer_comments, r.shopify_order_id,
+              r.link_token, r.date_created, r.expected_done,
+              c.customer_id, c.name AS customer_name, c.email, c.phone,
+              c.ship_address1, c.ship_address2, c.ship_city, c.ship_state, c.ship_zip, c.ship_country,
+              d.device_id, d.type, d.brand, d.model, d.model_number, d.serial_number,
+              d.region, d.color_edition, d.accessories_in, d.\`condition\`
+       FROM repair_order r
+       JOIN customer c ON r.customer_id = c.customer_id
+       JOIN device d   ON r.device_id   = d.device_id
+       WHERE r.repair_id = ?`,
+      [repairId]
+    );
+
+    if (repairs.length === 0) {
+      return res.status(404).json({ error: 'Repair not found' });
+    }
+    
+    const [notes] = await db.query(
+      'SELECT note_id, body, is_public, created_at FROM note WHERE repair_id = ? ORDER BY created_at',
+      [repairId]
+    );
+    const [photos] = await db.query(
+      'SELECT photo_id, image_url, date_added FROM repair_photo WHERE repair_id = ? ORDER BY date_added',
+      [repairId]
+    );
+    const [parts] = await db.query(
+      'SELECT part_id, part_name, status, quantity FROM part WHERE repair_id = ?',
+      [repairId]
+    );
+
+    res.json({ ...repairs[0], notes, photos, parts });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Could not load repair' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
