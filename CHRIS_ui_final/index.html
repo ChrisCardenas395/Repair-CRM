@@ -142,11 +142,32 @@
             </fieldset>
           </div>
 
+          <!-- Kevin's Photo Uploader/Note's Mock Up added to the details pop up-->
+          <fieldset class="form-section" style="margin-bottom: 16px;">
+            <legend><h3>Progress & Media</h3></legend>
+            <div style="margin-bottom: 12px;">
+              <label for="detail-date-picker"><strong>Date Updated:</strong></label>
+              <input type="date" id="detail-date-picker" />
+            </div>
+
+            <div style="margin-bottom: 12px;">
+              <label><strong>Notes:</strong></label>
+              <div class="note-box" id="detailNoteBox" contenteditable="true" style="border: 1px solid #ccc; padding: 8px; min-height: 40px; border-radius: 4px;"></div>
+            </div>
+
+            <div>
+              <label><strong>Photos:</strong></label>
+              <input type="file" id="detail-photo-input" accept="image/*" multiple />
+              <div id="detail-photo-preview" style="display: flex; flex-wrap: gap: 3px; 10px; margin-top: 10px;"></div>
+            </div>
+          </fieldset>
+
           <div class="form_actions">
             <button type="button" onclick="closeDetails()">Close</button>
           </div>
         </div>
       </div>
+      
       <!-- Repair Order Card Detail Display -->
 
       <header class="site-header">
@@ -217,6 +238,7 @@
       <h1 id="workspace-title">Technician's Workspace</h1>
 
       <section class="work-columns" aria-label="Workspace columns">
+
         <!-- -------- RECEIVED FROM CUSTOMER -------- -->
         <article class="work-column">
           <h2 class="visually-hidden">Received from Customer</h2>
@@ -230,50 +252,7 @@
 
           <div class="content">
             <h2>Received from Customer</h2>
-
             <div class="work-divider" aria-hidden="true"></div>
-
-            <article
-              class="customer-request"
-              data-searchable="example date updated notes photo"
-            >
-              <!-- <h3>Example</h3> -->
-              <dl>
-                <div>
-                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
-                </div>
-                <br /><br />
-                <div>
-                  <dt>Notes:</dt>
-                  <div class="note-box" contenteditable="true"></div>
-                </div>
-                <div>
-                  <br /><br />
-                  <dt>Photo:</dt>
-                  <input
-                    type="file"
-                    id="photo-input"
-                    accept="image/*"
-                    multiple
-                  />
-                  <br /><br />
-                  <div
-                    id="photo-preview"
-                    style="display: flex; flex-wrap: wrap; gap: 10px"
-                  ></div>
-                </div>
-              </dl>
-              <button
-                class="close-request"
-                type="button"
-                aria-label="Close customer request"
-              >
-                ×
-              </button>
-            </article>
-
-            <p class="empty-state" hidden>No matching requests found.</p>
-          </div>
         </article>
         <!-- -------- RECEIVED FROM CUSTOMER -------- -->
 
@@ -287,49 +266,9 @@
               <path d="M32 19v26M19 32h26"></path>
             </svg>
           </button>
-
           <div class="content">
             <h2>Under Review</h2>
             <div class="work-divider" aria-hidden="true"></div>
-
-            <article
-              class="customer-request"
-              data-searchable="example date updated notes photo"
-            >
-              <!-- <h3>Example</h3> -->
-              <dl>
-                <div>
-                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
-                </div>
-                <br /><br />
-                <div>
-                  <dt>Notes:</dt>
-                  <div class="note-box" contenteditable="true"></div>
-                </div>
-                <div>
-                  <br /><br />
-                  <dt>Photo:</dt>
-                  <input
-                    type="file"
-                    id="photo-input"
-                    accept="image/*"
-                    multiple
-                  />
-                  <br /><br />
-                  <div
-                    id="photo-preview"
-                    style="display: flex; flex-wrap: wrap; gap: 10px"
-                  ></div>
-                </div>
-              </dl>
-              <button
-                class="close-request"
-                type="button"
-                aria-label="Close customer request"
-              >
-                ×
-              </button>
-            </article>
           </div>
         </article>
         <!-- ---------------- UNDER REVIEW ---------------- -->
@@ -348,44 +287,6 @@
           <div class="content">
             <h2>Waiting for Parts</h2>
             <div class="work-divider" aria-hidden="true"></div>
-
-            <article
-              class="customer-request"
-              data-searchable="example date updated notes photo"
-            >
-              <!-- <h3>Example</h3> -->
-              <dl>
-                <div>
-                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
-                </div>
-                <br /><br />
-                <div>
-                  <dt>Notes:</dt>
-                  <div class="note-box" contenteditable="true"></div>
-                </div>
-                <div>
-                  <br /><br />
-                  <dt>Photo:</dt>
-                  <input
-                    type="file"
-                    id="photo-input"
-                    accept="image/*"
-                    multiple
-                  />
-                  <br /><br />
-                  <div
-                    id="photo-preview"
-                    style="display: flex; flex-wrap: wrap; gap: 10px"
-                  ></div>
-                </div>
-              </dl>
-              <button
-                class="close-request"
-                type="button"
-                aria-label="Close customer request"
-              >
-                ×
-              </button>
             </article>
           </div>
         </article>
@@ -406,40 +307,7 @@
             <h2>In Progress</h2>
             <div class="work-divider" aria-hidden="true"></div>
 
-            <article class="customer-request">
-              <!-- <h3>Example</h3> -->
-              <dl>
-                <div>
-                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
-                </div>
-                <br /><br />
-                <div>
-                  <dt>Notes:</dt>
-                  <div class="note-box" contenteditable="true"></div>
-                </div>
-                <div>
-                  <br /><br />
-                  <dt>Photo:</dt>
-                  <input
-                    type="file"
-                    id="photo-input"
-                    accept="image/*"
-                    multiple
-                  />
-                  <br /><br />
-                  <div
-                    id="photo-preview"
-                    style="display: flex; flex-wrap: wrap; gap: 10px"
-                  ></div>
-                </div>
-              </dl>
-              <button
-                class="close-request"
-                type="button"
-                aria-label="Close customer request"
-              >
-                ×
-              </button>
+            
             </article>
           </div>
         </article>
@@ -460,40 +328,6 @@
             <h2>Done</h2>
             <div class="work-divider" aria-hidden="true"></div>
 
-            <article class="customer-request">
-              <!-- <h3>Example</h3> -->
-              <dl>
-                <div>
-                  <dt>Date Updated: <input type="date" id="date-picker" /></dt>
-                </div>
-                <br /><br />
-                <div>
-                  <dt>Notes:</dt>
-                  <div class="note-box" contenteditable="true"></div>
-                </div>
-                <div>
-                  <br /><br />
-                  <dt>Photo:</dt>
-                  <input
-                    type="file"
-                    id="photo-input"
-                    accept="image/*"
-                    multiple
-                  />
-                  <br /><br />
-                  <div
-                    id="photo-preview"
-                    style="display: flex; flex-wrap: wrap; gap: 10px"
-                  ></div>
-                </div>
-              </dl>
-              <button
-                class="close-request"
-                type="button"
-                aria-label="Close customer request"
-              >
-                ×
-              </button>
             </article>
           </div>
         </article>
