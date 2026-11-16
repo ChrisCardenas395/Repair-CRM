@@ -61,7 +61,7 @@ button {
   z-index: 10;
 }
 
-.order-card {
+/* .order-card {
   position: absolute;
   left: 48px;
   display: flex;
@@ -80,73 +80,7 @@ button {
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
-}
-
-.create-order {
-  top: 528px;
-  background: #00c8b3;
-  font-family: Inter, Arial, sans-serif;
-}
-
-.popup-box input,
-.popup-box textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-/* Pop up order creation form (Hidden by Default) */
-  .overlay {
-    display: none; 
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* allows pop up to sit above all other page elements */
-  }
-  .popup-box {
-  background: #fff;
-  padding: 24px;
-  border-radius: 8px;
-  width: 720px;        /* Widened from 360px to fit two columns */
-  max-width: 95vw;     /* Prevents overflow on smaller screens */
-  max-height: 90vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-  .popup-box input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  .sections-row {
-  display: flex;       /* Places child fieldsets side-by-side */
-  gap: 20px;           /* Adds space between the two columns */
-  margin-bottom: 16px;
-}
-.form-section {
-  flex: 1;             /* Makes each section take up equal width */
-  min-width: 0;        /* Prevents inputs from breaking out of flex columns */
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 14px;
-  margin: 0;           /* Removes default bottom margin so columns align */
-}
-.form-section h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: flex-end; /* Aligns buttons neatly to the bottom right */
-  gap: 10px;
-}
-/* Pop up order creation form (Hidden by Default) */
+} */
 
 .site-header {
   position: fixed;
@@ -197,7 +131,7 @@ button {
 }
 
 .navigation-policies {
-  left: 450px;
+  left: 300px;
 }
 
 .navigation-icon {
@@ -323,32 +257,7 @@ button {
   margin: 0;
 }
 
-.close-request {
-  position: absolute;
-  top: -2px;
-  right: 4px;
-  padding: 0 4px;
-  background: transparent;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 34px;
-  font-weight: 300;
-  line-height: 40px;
-}
-
-.empty-state {
-  position: absolute;
-  top: 130px;
-  left: 14px;
-  width: 417px;
-  margin: 0;
-  color: #48484c;
-  font-size: 20px;
-  text-align: center;
-}
-
 /* ------------------DOMINO TRACKER-------------- */
-
 .orders-strip {
   position: absolute;
   top: 171px;
@@ -385,7 +294,7 @@ button {
 .capsule-divider-three,
 .capsule-divider-four,
 .capsule-divider-five {
-  left: var(--divider-position, 0px);
+  left: var(--divider-position, 1px);
 }
 
 /* ------------------DOMINO TRACKER-------------- */
