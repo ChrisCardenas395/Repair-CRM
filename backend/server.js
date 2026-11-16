@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 4380;
 
+const BOARD_STATUSES =  ['Received', 'Under Review', 'Waiting for Parts', 'In Progress', 'Done', 'Shipped'];
 app.get('/', (req, res) => {
   res.send('Repair CRM backend is running');
 });
@@ -133,6 +134,53 @@ app.get('/repairs/:id', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Could not load repair' });
+  }
+});
+
+app.patch('/repairs/:id/status', async (req, res) => {
+  const repairId = req.params.id;
+  const { status } = req.body;
+
+  if (!BOARD_STATUSES.includes(status)) {
+    return res.status(400).json({ error: 'Status must be one of: ' + BOARD_STATUSES.join(', ')});
+  }
+
+  const conn = await db.getConnection();
+
+  try {
+    await conn.beginTransaction();
+
+    const [rows] = await conn.query(
+      'SELECT status FROM repair_order WHERE repair_id = ?',
+      [repairId]
+    );
+
+    if (rows.length === 0) {
+      await conn.rollback();
+      return res.status(404).json({ error: 'Repair not found' });
+    }
+
+    const oldStatus = rows[0].status;
+
+    await conn.query(
+      'UPDATE repair_order SET status = ? WHERE repair_id = ?',
+      [status, repairId]
+    );
+
+    await conn.query(
+      `INSERT INTO edit_history (repair_id, change_type, details)
+       VALUES (?, 'Status', ?)`,
+      [repairId, `${oldStatus} -> ${status}`]
+    );
+
+    await conn.commit();
+    res.json({ repair_id: Number(repairId), old_status: oldStatus, status: status });
+  } catch (err) {
+    await conn.rollback();
+    console.error(err);
+    res.status(500).json({ error: 'Could not update status' });
+  } finally {
+    conn.release();
   }
 });
 
