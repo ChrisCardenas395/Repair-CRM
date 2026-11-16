@@ -2,8 +2,10 @@ require('dotenv').config();
 const crypto = require('crypto');
 const db = require('./db');
 const express = require('express');
+const createRepairInformationRouter = require('./routes/repair-information');
 
 const app = express();
+app.use(createRepairInformationRouter(db));
 app.use(express.json());
 const PORT = process.env.PORT || 4380;
 
