@@ -115,7 +115,7 @@ input.addEventListener('change', function() {
   // --------------------------POP UP MENU------------------------- */
   document.getElementById("date-picker").valueAsDate = new Date();
 
-  // Create Order & Orde Details Pop up Menu
+  // Create Order & Order Details Pop up Menu
 function openForm() {
     document.getElementById("popupOverlay").style.display = "flex";
   }
@@ -171,12 +171,24 @@ const orderData = {
   // Create the new order card element
   const newCard = document.createElement("button");
   newCard.type = "button";
+  newCard.draggable = true;
   newCard.className = "order-card"; // Uses your existing .order-card styling
+  newCard.id = "order-" + Date.now(); // Unique ID for drag referencing
 
   // Order Cards display name
   newCard.innerHTML = `
     <strong>${deviceType}</strong><br>
   `;
+
+  // Set up the drag start event
+newCard.addEventListener("dragstart", function (event) {
+  event.dataTransfer.setData("text/plain", event.target.id);
+  event.target.style.opacity = "0.4";
+});
+
+newCard.addEventListener("dragend", function (event) {
+  event.target.style.opacity = "1";
+});
 
   //Display full details when clicked
   newCard.addEventListener("click", function () {
@@ -202,3 +214,25 @@ const orderData = {
 })
 // Create Order & Order Details Pop up Menu End
 // --------------------------POP UP MENU------------------------- */
+
+// -------------------------- DRAG AND DROP for Columns -----------------------------
+const workColumns = document.querySelectorAll(".work-column");
+
+workColumns.forEach((column) => {
+  column.addEventListener("dragover", function (event) {
+    event.preventDefault(); // Necessary to allow dropping
+  });
+
+  column.addEventListener("drop", function (event) {
+    event.preventDefault();
+    const id = event.dataTransfer.getData("text/plain");
+    const draggableElement = document.getElementById(id);
+    
+    // Find the .content container inside the target column
+    const dropZone = column.querySelector(".content");
+    if (draggableElement && dropZone) {
+      dropZone.appendChild(draggableElement);
+    }
+  });
+});
+// -------------------------- DRAG AND DROP for Columns -----------------------------
