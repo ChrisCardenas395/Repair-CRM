@@ -87,7 +87,13 @@ app.post('/repairs', async (req, res) => {
     );
 
     await conn.commit();
-    res.status(201).json({ repair_id: repairId, link_token: linkToken });
+      
+    res.status(201).json({
+      repair_id: repairId,
+      link_token: linkToken,
+      link: `${process.env.BASE_URL}/track/${linkToken}`
+    });
+  
   } catch (err) {
     await conn.rollback();
     console.error(err);
