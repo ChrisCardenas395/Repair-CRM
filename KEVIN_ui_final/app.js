@@ -67,72 +67,91 @@ workColumnButtons.forEach((button, index) => {
 
 // --------------------------COLLAPSE----------------------------- */
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    var column = this.closest(".work-column");
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      column.classList.remove("expanded");
-      column.classList.add("collapsed");
-    } else {
-      content.style.display = "block";
-      column.classList.remove("collapsed");
-      column.classList.add("expanded");
-    }
-  });
+for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        var column = this.closest(".work-column");
+        var content = this.nextElementSibling;
+
+        content.style.display = "block";
+
+        column.classList.remove("collapsed");
+        column.classList.add("expanded");
+
+        this.style.display = "none";
+        column.querySelector(".expand-button").style.display = "block";
+    });
 }
+
+var expanded = document.getElementsByClassName("expand-button");
+
+for (var i = 0; i < expanded.length; i++) {
+    expanded[i].addEventListener("click", function() {
+        var column = this.closest(".work-column");
+        var content = this.previousElementSibling;
+
+        content.style.display = "none";
+
+        column.classList.remove("expanded");
+        column.classList.add("collapsed");
+
+        this.style.display = "none";
+        column.querySelector(".collapsible").style.display = "block";
+    });
+}
+
 // --------------------------COLLAPSE----------------------------- */
 
 // ----------------------------PHOTO----------------------------- */
 
-const input = document.getElementById('photo-input');
-const preview = document.getElementById('photo-preview');
+const input = document.getElementById("photo-input");
+const preview = document.getElementById("photo-preview");
 
-input.addEventListener('change', function() {
-  preview.innerHTML = '';
+input.addEventListener("change", function () {
+  preview.innerHTML = "";
 
   const files = this.files;
 
-  Array.from(files).forEach(file => {
-    if (file.type.startsWith('image/')) {
-      const img = document.createElement('img');
+  Array.from(files).forEach((file) => {
+    if (file.type.startsWith("image/")) {
+      const img = document.createElement("img");
 
       img.src = URL.createObjectURL(file);
-      img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'cover';
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.objectFit = "cover";
 
       preview.appendChild(img);
     }
   });
 });
-  // ----------------------------PHOTO----------------------------- */
+// ----------------------------PHOTO----------------------------- */
 
-  // --------------------------POP UP MENU------------------------- */
-  document.getElementById("date-picker").valueAsDate = new Date();
+// --------------------------POP UP MENU------------------------- */
+document.getElementById("date-picker").valueAsDate = new Date();
 
-  // Create Order & Orde Details Pop up Menu
+// Create Order & Orde Details Pop up Menu
 function openForm() {
-    document.getElementById("popupOverlay").style.display = "flex";
-  }
+  document.getElementById("popupOverlay").style.display = "flex";
+}
 function closeForm() {
   document.getElementById("popupOverlay").style.display = "none";
-  }
+}
 function closeDetails() {
   document.getElementById("detailsOverlay").style.display = "none";
-  }
+}
 function showOrderDetails(orderData) {
-  document.getElementById("detailHeader").textContent = `${orderData.deviceType} for ${orderData.firstName}`;
-  document.getElementById("detailSubHeader").textContent = `Order #${orderData.deviceID}`;
+  document.getElementById("detailHeader").textContent =
+    `${orderData.deviceType} for ${orderData.firstName}`;
+  document.getElementById("detailSubHeader").textContent =
+    `Order #${orderData.deviceID}`;
   document.getElementById("detailPLink").textContent = `Personalized Link: `;
-  document.getElementById("detailName").textContent = `${orderData.firstName} ${orderData.lastName}`;
+  document.getElementById("detailName").textContent =
+    `${orderData.firstName} ${orderData.lastName}`;
   document.getElementById("detailEmail").textContent = orderData.email;
   document.getElementById("detailPhone").textContent = orderData.phone;
-  document.getElementById("detailDeviceType").textContent = orderData.deviceType;
+  document.getElementById("detailDeviceType").textContent =
+    orderData.deviceType;
   document.getElementById("detailBrand").textContent = orderData.brand;
   document.getElementById("detailModel").textContent = orderData.model;
   document.getElementById("detailDeviceID").textContent = orderData.deviceID;
@@ -140,65 +159,69 @@ function showOrderDetails(orderData) {
   document.getElementById("detailComplaint").textContent = orderData.complaint;
 
   document.getElementById("detailsOverlay").style.display = "flex";
-  }
+}
 
 //Prevent the form from refreshing the page
-document.getElementById("repairOrderForm").addEventListener("submit", function (event) {
-  event.preventDefault();
+document
+  .getElementById("repairOrderForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-const orderData = {
-    firstName: document.getElementById("first_name").value.trim(),
-    lastName: document.getElementById("last_name").value.trim(),
-    email: document.getElementById("email").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    deviceType: document.getElementById("deviceType").value.trim(),
-    brand: document.getElementById("brand").value.trim(),
-    deviceID: document.getElementById("deviceID").value.trim(),
-    model: document.getElementById("model").value.trim(),
-    serialNumber: document.getElementById("serialNumber").value.trim(),
-    complaint: document.getElementById("complaint").value.trim(),
-  };
+    const orderData = {
+      firstName: document.getElementById("first_name").value.trim(),
+      lastName: document.getElementById("last_name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      deviceType: document.getElementById("deviceType").value.trim(),
+      brand: document.getElementById("brand").value.trim(),
+      deviceID: document.getElementById("deviceID").value.trim(),
+      model: document.getElementById("model").value.trim(),
+      serialNumber: document.getElementById("serialNumber").value.trim(),
+      complaint: document.getElementById("complaint").value.trim(),
+    };
 
-  // Grab values from the form inputs
-  const firstName = document.getElementById("first_name").value.trim();
-  const lastName = document.getElementById("last_name").value.trim();
-  const brand = document.getElementById("brand").value.trim();
-  const model = document.getElementById("model").value.trim();
-  const deviceType = document.getElementById("deviceType").value.trim();
-  const deviceID = document.getElementById("deviceID").value.trim();
-  const complaint = document.getElementById("complaint").value.trim();
+    // Grab values from the form inputs
+    const firstName = document.getElementById("first_name").value.trim();
+    const lastName = document.getElementById("last_name").value.trim();
+    const brand = document.getElementById("brand").value.trim();
+    const model = document.getElementById("model").value.trim();
+    const deviceType = document.getElementById("deviceType").value.trim();
+    const deviceID = document.getElementById("deviceID").value.trim();
+    const complaint = document.getElementById("complaint").value.trim();
 
-  // Create the new order card element
-  const newCard = document.createElement("button");
-  newCard.type = "button";
-  newCard.className = "order-card"; // Uses your existing .order-card styling
+    // Create the new order card element
+    const newCard = document.createElement("button");
+    newCard.type = "button";
+    newCard.className = "order-card"; // Uses your existing .order-card styling
 
-  // Order Cards display name
-  newCard.innerHTML = `
+    // Order Cards display name
+    newCard.innerHTML = `
     <strong>${deviceType}</strong><br>
   `;
 
-  //Display full details when clicked
-  newCard.addEventListener("click", function () {
-    // Highlight the active card in the sidebar
-    document.querySelectorAll(".orders-sidebar .order-card").forEach((card) => {
-      card.classList.remove("active");
+    //Display full details when clicked
+    newCard.addEventListener("click", function () {
+      // Highlight the active card in the sidebar
+      document
+        .querySelectorAll(".orders-sidebar .order-card")
+        .forEach((card) => {
+          card.classList.remove("active");
+        });
+      newCard.classList.add("active");
+
+      // Populate and open the details pop-up
+      showOrderDetails(orderData);
     });
-    newCard.classList.add("active");
 
-    // Populate and open the details pop-up
-    showOrderDetails(orderData);
+    // Insert the new card directly above the "Create New Order" button
+    // Because it inserts right before the button, older cards stay above it and get pushed to the top
+    const sidebar = document.querySelector(".orders-sidebar");
+    const createBtn = document.querySelector(".create-order");
+    sidebar.insertBefore(newCard, createBtn);
+
+    // Clear the form fields and close the pop-up
+    event.target.reset();
+    closeForm();
   });
-
-  // Insert the new card directly above the "Create New Order" button
-  // Because it inserts right before the button, older cards stay above it and get pushed to the top
-  const sidebar = document.querySelector(".orders-sidebar");
-  const createBtn = document.querySelector(".create-order");
-  sidebar.insertBefore(newCard, createBtn);
-
-   // Clear the form fields and close the pop-up
-  event.target.reset();
-  closeForm();
-})
 // Create Order & Order Details Pop up Menu End
 // --------------------------POP UP MENU------------------------- */

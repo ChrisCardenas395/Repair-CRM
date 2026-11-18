@@ -526,11 +526,24 @@ button {
 /* --------------------------COLLAPSE----------------------------- */
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
+  display: block;
   width: 76px;
   min-width: 76px;
   height: 70px;
   background-color: #ecf5fb;
   fill: #5b80dd;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.expand-button {
+  display: none;
+  width: 76px;
+  min-width: 76px;
+  height: 70px;
+  background-color: #ecf5fb;
+  fill: #d94b68;
   stroke: #fff;
   stroke-width: 5;
   stroke-linecap: round;
