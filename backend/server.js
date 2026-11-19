@@ -3,6 +3,7 @@ const crypto = require('crypto');
 const db = require('./db');
 const express = require('express');
 const createRepairInformationRouter = require('./routes/repair-information');
+const path = require('path');
 
 const app = express();
 app.use(createRepairInformationRouter(db));
@@ -10,9 +11,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 4380;
 
 const BOARD_STATUSES =  ['Received', 'Under Review', 'Waiting for Parts', 'In Progress', 'Done', 'Shipped'];
-app.get('/', (req, res) => {
-  res.send('Repair CRM backend is running');
-});
+app.use(express.static(path.join(__dirname, '..', 'KEVIN_ui_final')));
 
 app.get('/repairs', async (req, res) => {
   try {

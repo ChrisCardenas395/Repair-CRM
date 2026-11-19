@@ -16,12 +16,12 @@ CREATE TABLE customer (
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     phone VARCHAR(20),
-    ship_address1 VARCHAR(255) NOT NULL,
+    ship_address1 VARCHAR(255),
     ship_address2 VARCHAR(255),
-    ship_city VARCHAR(255) NOT NULL,
-    ship_state VARCHAR(255) NOT NULL,
-    ship_zip VARCHAR(20) NOT NULL,
-    ship_country VARCHAR(255) NOT NULL
+    ship_city VARCHAR(255),
+    ship_state VARCHAR(255),
+    ship_zip VARCHAR(20),
+    ship_country VARCHAR(255)
 );
 
 -- Retro consoles / handhelds (Game Boy, SNES, N64, Genesis, PS1...)
