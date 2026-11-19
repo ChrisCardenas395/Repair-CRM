@@ -225,3 +225,12 @@ document
   });
 // Create Order & Order Details Pop up Menu End
 // --------------------------POP UP MENU------------------------- */
+
+// ------------------------------- PASSWORD ----------------------------- //
+const passwordForm = document.getElementById("passwordForm");
+const passwordOverlay = document.getElementById("passwordOverlay");
+
+passwordForm.addEventListener("submit", function(event) {
+    passwordOverlay.style.display = "none";
+});
+// ------------------------------- PASSWORD ----------------------------- //

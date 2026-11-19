@@ -45,6 +45,20 @@
   </head>
   <body>
     <main class="workspace" data-model-id="11:57">
+
+      <div id="passwordOverlay" class="pass-overlay">
+        <div class="password-popup">
+          <form id="passwordForm">
+            <div class="pass_row">
+              <fieldset class="pass_section">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required />
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <aside class="orders-sidebar" aria-label="Orders">
         <button
           class="order-card create-order"
@@ -215,14 +229,13 @@
           </button>
 
           <button type="button" class="expand-button">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <circle cx="32" cy="32" r="27"></circle>
-                <path d="M19 32h26"></path>
-              </svg>
-            </button>
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M19 32h26"></path>
+            </svg>
+          </button>
 
           <div class="content">
-
             <h2>Received from Customer</h2>
 
             <div class="work-divider" aria-hidden="true"></div>
@@ -283,11 +296,11 @@
           </button>
 
           <button type="button" class="expand-button">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <circle cx="32" cy="32" r="27"></circle>
-                <path d="M19 32h26"></path>
-              </svg>
-            </button>
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M19 32h26"></path>
+            </svg>
+          </button>
 
           <div class="content">
             <h2>Under Review</h2>
@@ -347,11 +360,11 @@
           </button>
 
           <button type="button" class="expand-button">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <circle cx="32" cy="32" r="27"></circle>
-                <path d="M19 32h26"></path>
-              </svg>
-            </button>
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M19 32h26"></path>
+            </svg>
+          </button>
 
           <div class="content">
             <h2>Waiting for Parts</h2>
@@ -411,11 +424,11 @@
           </button>
 
           <button type="button" class="expand-button">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <circle cx="32" cy="32" r="27"></circle>
-                <path d="M19 32h26"></path>
-              </svg>
-            </button>
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M19 32h26"></path>
+            </svg>
+          </button>
 
           <div class="content">
             <h2>In Progress</h2>
@@ -472,11 +485,11 @@
           </button>
 
           <button type="button" class="expand-button">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <circle cx="32" cy="32" r="27"></circle>
-                <path d="M19 32h26"></path>
-              </svg>
-            </button>
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M19 32h26"></path>
+            </svg>
+          </button>
 
           <div class="content">
             <h2>Done</h2>
@@ -533,11 +546,11 @@
           </button>
 
           <button type="button" class="expand-button">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <circle cx="32" cy="32" r="27"></circle>
-                <path d="M19 32h26"></path>
-              </svg>
-            </button>
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="27"></circle>
+              <path d="M19 32h26"></path>
+            </svg>
+          </button>
 
           <div class="content">
             <h2>Shipped</h2>
