@@ -4,9 +4,11 @@ const db = require('./db');
 const express = require('express');
 const createRepairInformationRouter = require('./routes/repair-information');
 const path = require('path');
+const createRepairResourcesRouter = require('./routes/repair-resources');
 
 const app = express();
 app.use(createRepairInformationRouter(db));
+app.use(createRepairResourcesRouter(db));
 app.use(express.json());
 const PORT = process.env.PORT || 4380;
 

@@ -28,6 +28,7 @@ function checkFields(body, allowed) {
   }
 }
 
+// Trim the text and check its byte size before it reaches the database.
 function text(value, field) {
   if (typeof value !== 'string' || !value.trim()) {
     throw new RequestError(400, `${field} must be a nonblank string`);
@@ -46,6 +47,7 @@ function publicFlag(value) {
   return value;
 }
 
+// MySQL stores the flag as a number; the API returns true or false.
 function noteJson(row) {
   return { ...row, is_public: Boolean(row.is_public) };
 }
@@ -112,6 +114,7 @@ module.exports = function createRepairInformationRouter(db, logger = console) {
     );
   }
 
+  // Return this repair's notes in the order they were added.
   router.get('/repairs/:id/notes', endpoint('Could not load notes', async (req, res) => {
     const repairId = parseId(req.params.id);
     const [repairs] = await db.query('SELECT repair_id FROM repair_order WHERE repair_id = ?', [repairId]);
@@ -143,6 +146,7 @@ module.exports = function createRepairInformationRouter(db, logger = console) {
     res.status(201).json(note);
   }));
 
+  // PATCH lets the caller edit the note text, visibility, or both.
   router.patch('/notes/:id', endpoint('Could not update note', async (req, res) => {
     const noteId = parseId(req.params.id);
     checkFields(req.body, ['body', 'is_public']);
